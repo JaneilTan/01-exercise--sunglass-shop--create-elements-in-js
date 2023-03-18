@@ -10,7 +10,24 @@ import products from "./products.js";
 const getProductEl = (product) => {
   // TODO: change the following productEl variable to be a DOM element
   // use the product parameter to complete the information
-  const productEl = null;
+  const productEl = document.createElement("li");
+  productEl.classList.add("product-grid-item");
+
+  const imgEl = document.createElement("img");
+  imgEl.setAttribute("src", product.images[0]);
+  productEl.appendChild(imgEl);
+  
+  const titleEl = document.createElement("h3");
+  titleEl.textContent = product.name;
+  productEl.appendChild(titleEl);
+
+  const descriptionEl = document.createElement("p");
+  descriptionEl.textContent = product.description;
+  productEl.appendChild(descriptionEl);
+
+  const btnEl = document.createElement("button");
+  btnEl.textContent = "Buy now";
+  productEl.appendChild(btnEl);
 
   return productEl;
 };
